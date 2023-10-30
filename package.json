@@ -28,7 +28,7 @@
     "clean": "gts clean",
     "precompile": "npm run clean",
     "compile": "tsc",
-    "postcompile": "browserify build/examples/extension-v2/background.js -o build/examples/extension-v2/background.js && browserify build/examples/extension-v3/background.js -o build/examples/extension-v3/background.js",
+    "postcompile": "browserify build/examples/extension-v2/background.js -o build/examples/extension-v2/background.js && browserify build/examples/extension-v3/background.js -o build/examples/extension-v3/background.js && cp examples/extension-v3/index.html build/examples/extension-v3/index.html",
     "fix": "gts fix",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
@@ -36,7 +36,7 @@
     "docs": "typedoc --excludePrivate --excludeInternal --readme none lib/index.ts"
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.166",
+    "@types/chrome": "^0.0.248",
     "@types/node": "^14.11.2",
     "@types/puppeteer-core": "^5.4.0",
     "browserify": "^17.0.0",

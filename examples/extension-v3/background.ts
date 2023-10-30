@@ -34,8 +34,8 @@ const run = async (tabId: number) => {
   {
     const targetPage = page;
     await targetPage.setViewport({
-      width: 1636,
-      height: 710,
+      width: 1263,
+      height: 330,
     });
   }
   {
@@ -46,63 +46,212 @@ const run = async (tabId: number) => {
     };
     startWaitingForEvents();
     await targetPage.goto(
-      'https://docs.google.com/forms/d/e/1FAIpQLScdIWgDR_F42UCWflRz2wbe6YFjdhjp5jrVfxq--PU-F2pHHw/viewform'
+      'https://docs.google.com/forms/d/e/1FAIpQLSddpZp10fEU3CMmyADJV03PFIzJHzvuf3xwVubsUYqT1QQsKg/viewform'
     );
     await Promise.all(promises);
   }
   {
     const targetPage = page;
-    // const s55 = await targetPage.waitForSelector('div.uHMk6b');
-    const s55 = await targetPage?.$x('//*[@id="i5"]/div[2]');
-    await s55?.[0]?.click({
+    const s = await targetPage.waitForSelector(
+      'div.o3Dpx > div:nth-of-type(1) input'
+    );
+    s?.click({
       offset: {
-        x: 6,
-        y: 9.46875,
+        x: 163.66665649414062,
+        y: 5.135406494140625,
       },
     });
-
-    // await puppeteer.Locator.race([
-    //   targetPage.locator('div.uHMk6b'),
-    //   targetPage.locator('::-p-xpath(//*[@id=\\"i5\\"]/div[2])'),
-    //   targetPage.locator(':scope >>> div.uHMk6b'),
-    // ])
-    //   .setTimeout(timeout)
-    //   .click({
-    //     offset: {
-    //       x: 6,
-    //       y: 9.46875,
-    //     },
-    //   });
   }
   {
     const targetPage = page;
-    // const s80 = await targetPage.waitForSelector(
-    //   'label:nth-of-type(5) div.vd3tt > div'
-    // );
-    const s80 = await targetPage?.$x(
-      '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/span/div/label[5]/div[2]/div/div/div[3]/div'
+    const s = await targetPage.waitForSelector(
+      'div.o3Dpx > div:nth-of-type(1) input'
     );
-    await s80?.[0]?.click({
+    await s?.type('4140374');
+  }
+  {
+    const targetPage = page;
+    const s = await targetPage.waitForSelector(
+      'div.o3Dpx > div:nth-of-type(2) input'
+    );
+    s?.click({
       offset: {
-        x: 2.9478759765625,
-        y: 7.1353759765625,
+        x: 113.66665649414062,
+        y: 5.8020782470703125,
       },
     });
+  }
+  {
+    const targetPage = page;
+    const s = await targetPage.waitForSelector(
+      'div.o3Dpx > div:nth-of-type(2) input'
+    );
+    s?.type('Walkaroo');
+  }
+  {
+    const targetPage = page;
+    const s = await targetPage.waitForSelector(
+      'div.o3Dpx > div:nth-of-type(3) div.PfQ8Lb > div > div:nth-of-type(1) input'
+    );
+    s?.click({
+      offset: {
+        x: 5.666656494140625,
+        y: 10.46875,
+      },
+    });
+  }
+  {
+    const targetPage = page;
+    const s = await targetPage.waitForSelector(
+      'div.o3Dpx > div:nth-of-type(3) div.PfQ8Lb > div > div:nth-of-type(1) input'
+    );
+    s?.type('01');
+  }
+  {
+    const targetPage = page;
+    const s = await targetPage.waitForSelector(
+      'div.o3Dpx > div:nth-of-type(3) div.PfQ8Lb > div > div:nth-of-type(3) input'
+    );
+    s?.click({
+      offset: {
+        x: 4.666656494140625,
+        y: 17.46875,
+      },
+    });
+  }
+  {
+    const targetPage = page;
+    const s = await targetPage.waitForSelector(
+      'div.o3Dpx > div:nth-of-type(3) div.PfQ8Lb > div > div:nth-of-type(3) input'
+    );
+    s?.type('00');
+  }
+  {
+    const targetPage = page;
+    const s = await targetPage.waitForSelector(
+      'div:nth-of-type(4) div.PfQ8Lb > div > div:nth-of-type(1) input'
+    );
+    await s?.click({
+      offset: {
+        x: 5.666656494140625,
+        y: 9.802078247070312,
+      },
+    });
+  }
+  {
+    const targetPage = page;
+    const s = await targetPage.waitForSelector(
+      'div:nth-of-type(4) div.PfQ8Lb > div > div:nth-of-type(1) input'
+    );
+    await s?.type('01');
+  }
+  {
+    const targetPage = page;
+    const s = await targetPage.waitForSelector('div:nth-of-type(4) div.IDmXx');
+    await s?.click({
+      offset: {
+        x: 10.666656494140625,
+        y: 11.802078247070312,
+      },
+    });
+  }
+  {
+    const targetPage = page;
+    const s = await targetPage.waitForSelector(
+      'div:nth-of-type(4) div.PfQ8Lb > div > div:nth-of-type(3) input'
+    );
+    await s?.click({
+      offset: {
+        x: 4.666656494140625,
+        y: 12.802078247070312,
+      },
+    });
+  }
+  {
+    const targetPage = page;
+    const selector =
+      'div:nth-of-type(4) div.PfQ8Lb > div > div:nth-of-type(3) input';
+    const element = await targetPage.waitForSelector(selector);
+    if (element) {
+      await element.type('15');
+    }
+  }
 
-    // await puppeteer.Locator.race([
-    //   targetPage.locator('label:nth-of-type(5) div.vd3tt > div'),
-    //   targetPage.locator(
-    //     '::-p-xpath(//*[@id=\\"mG61Hd\\"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/span/div/label[5]/div[2]/div/div/div[3]/div)'
-    //   ),
-    //   targetPage.locator(':scope >>> label:nth-of-type(5) div.vd3tt > div'),
-    // ])
-    //   .setTimeout(timeout)
-    //   .click({
-    //     offset: {
-    //       x: 2.9478759765625,
-    //       y: 7.1353759765625,
-    //     },
-    //   });
+  {
+    const targetPage = page;
+    const selector = 'div:nth-of-type(5) input';
+    const element = await targetPage.waitForSelector(selector);
+    if (element) {
+      await element.click({
+        offset: {
+          x: 120.66665649414062,
+          y: 8.46875,
+        },
+      });
+    }
+  }
+  {
+    const targetPage = page;
+    const selector = 'div:nth-of-type(5) input';
+    const element = await targetPage.waitForSelector(selector);
+    if (element) {
+      await element.click({
+        offset: {
+          x: 117.66665649414062,
+          y: 13.46875,
+        },
+      });
+    }
+  }
+  {
+    const targetPage = page;
+    const selector = 'div:nth-of-type(5) input';
+    const element = await targetPage.waitForSelector(selector);
+    if (element) {
+      await element.type('2023-10-28');
+    }
+  }
+  {
+    const targetPage = page;
+    const selector = 'div:nth-of-type(6) textarea';
+    const element = await targetPage.waitForSelector(selector);
+    if (element) {
+      await element.click({
+        offset: {
+          x: 38.666656494140625,
+          y: 7.46875,
+        },
+      });
+    }
+  }
+  {
+    const targetPage = page;
+    const selector = 'div:nth-of-type(6) textarea';
+    const element = await targetPage.waitForSelector(selector);
+    if (element) {
+      await element.type('Mysore');
+    }
+  }
+  {
+    const targetPage = page;
+    const selector = 'div:nth-of-type(7) textarea';
+    const element = await targetPage.waitForSelector(selector);
+    if (element) {
+      await element.click({
+        offset: {
+          x: 38.666656494140625,
+          y: 8.135406494140625,
+        },
+      });
+    }
+  }
+  {
+    const targetPage = page;
+    const selector = 'div:nth-of-type(7) textarea';
+    const element = await targetPage.waitForSelector(selector);
+    if (element) {
+      await element.type('Thiruvallur');
+    }
   }
   {
     const targetPage = page;
@@ -110,45 +259,150 @@ const run = async (tabId: number) => {
     const startWaitingForEvents = () => {
       promises.push(targetPage.waitForNavigation());
     };
-    // const s111 = await targetPage.waitForSelector('div.lRwqcd span > span');
-    const s111 = await targetPage?.$x(
-      '//*[@id="mG61Hd"]/div[2]/div/div[3]/div/div[1]/div/span/span'
-    );
-    await s111?.[0]?.click({
-      offset: {
-        x: 17.6666259765625,
-        y: 21.46875,
-      },
-    });
-    // await puppeteer.Locator.race([
-    //   targetPage.locator('div.lRwqcd span > span'),
-    //   targetPage.locator(
-    //     '::-p-xpath(//*[@id=\\"mG61Hd\\"]/div[2]/div/div[3]/div/div[1]/div/span/span)'
-    //   ),
-    //   targetPage.locator(':scope >>> div.lRwqcd span > span'),
-    //   targetPage.locator('::-p-text(Submit)'),
-    // ])
-    //   .setTimeout(timeout)
-    //   .on('action', () => startWaitingForEvents())
-    //   .click({
-    //     offset: {
-    //       x: 17.6666259765625,
-    //       y: 21.46875,
-    //     },
-    //   });
+    const selector = 'div.lRwqcd span > span';
+    const element = await targetPage.waitForSelector(selector);
+    if (element) {
+      await element.click({
+        offset: {
+          x: 16.33331298828125,
+          y: 23.46875,
+        },
+      });
+    }
     await Promise.all(promises);
   }
+  {
+    const targetPage = page;
+    const s = await targetPage.waitForSelector(
+      'div.o3Dpx > div:nth-of-type(2) input'
+    );
+    await s?.click({
+      offset: {
+        x: 75.66665649414062,
+        y: 8.46875,
+      },
+    });
+  }
+  {
+    const targetPage = page;
+    const s = await targetPage.waitForSelector(
+      'div.o3Dpx > div:nth-of-type(2) input'
+    );
+    await s?.type('32ft sxl');
+  }
+  {
+    const targetPage = page;
+    const selector = 'div.KKjvXb > span';
+    const element = await targetPage.waitForSelector(selector);
+    if (element) {
+      await element.click({
+        offset: {
+          x: 101,
+          y: 9.802078247070312,
+        },
+      });
+    }
+  }
+  {
+    const targetPage = page;
+    const selector = 'div.OA0qNb > div.KKjvXb > span';
+    const element = await targetPage.waitForSelector(selector);
+    if (element) {
+      await element.click({
+        offset: {
+          x: 74,
+          y: 11.166664123535156,
+        },
+      });
+    }
+  }
+  {
+    const targetPage = page;
+    const selector = 'div:nth-of-type(4) input';
+    const element = await targetPage.waitForSelector(selector);
+    if (element) {
+      await element.click({
+        offset: {
+          x: 110.66665649414062,
+          y: 11.46875,
+        },
+      });
+    }
+  }
+  {
+    const targetPage = page;
+    const selector = 'div:nth-of-type(4) input';
+    const element = await targetPage.waitForSelector(selector);
+    if (element) {
+      await element.type('Footwear');
+    }
+  }
+  {
+    const targetPage = page;
+    const selector = 'div:nth-of-type(5) input';
+    const element = await targetPage.waitForSelector(selector);
+    if (element) {
+      await element.click({
+        offset: {
+          x: 71.66665649414062,
+          y: 9.135414123535156,
+        },
+      });
+    }
+  }
+  {
+    const targetPage = page;
+    const selector = 'div:nth-of-type(5) input';
+    const element = await targetPage.waitForSelector(selector);
+    if (element) {
+      await element.type('19000');
+    }
+  }
+  {
+    const targetPage = page;
+    const promises: any = [];
+    const startWaitingForEvents = () => {
+      promises.push(targetPage.waitForNavigation());
+    };
+    const s = await targetPage.waitForSelector('div.Y5sE8d > span > span');
+    await s?.click({
+      offset: {
+        x: 11.71875,
+        y: 5.46875,
+      },
+    });
+    await Promise.all(promises);
+  }
+
+  await chrome.runtime.sendMessage({greeting: 'From the content script'});
 };
 
 chrome.commands.onCommand.addListener(command => {
   if (command === 'test') {
     console.log('test');
+
     chrome.tabs.create(
       {
         active: true,
         url: 'https://www.google.co.in',
       },
-      tab => (tab.id ? run(tab.id) : null)
+      tab => {
+        if (tab.id) {
+          run(tab.id);
+
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          chrome.sidePanel.open({tabId: tab.id});
+        }
+      }
     );
   }
 });
+
+chrome.action.onClicked.addListener(tab => {
+  if (tab.id) {
+    run(tab.id);
+  }
+});
+
+chrome.sidePanel.setPanelBehavior({openPanelOnActionClick: true});
