@@ -1,8 +1,13 @@
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   console.log({msg});
   const element = document.querySelector('body > div');
+  console.log(msg);
   if (element) {
-    element.innerHTML = 'Listing Created';
+    if (msg.event === 'WAITING_FOR_USER_REVIEW') {
+      element.innerHTML = 'Waiting for user review...';
+    } else {
+      element.innerHTML = 'Listed Created Successfully';
+    }
   }
 });
 

@@ -35,7 +35,7 @@ const run = async (tabId: number) => {
     const targetPage = page;
     await targetPage.setViewport({
       width: 1263,
-      height: 330,
+      height: 630,
     });
   }
   {
@@ -358,23 +358,23 @@ const run = async (tabId: number) => {
       await element.type('19000');
     }
   }
-  {
-    const targetPage = page;
-    const promises: any = [];
-    const startWaitingForEvents = () => {
-      promises.push(targetPage.waitForNavigation());
-    };
-    const s = await targetPage.waitForSelector('div.Y5sE8d > span > span');
-    await s?.click({
-      offset: {
-        x: 11.71875,
-        y: 5.46875,
-      },
-    });
-    await Promise.all(promises);
-  }
+  // {
+  //   const targetPage = page;
+  //   const promises: any = [];
+  //   const startWaitingForEvents = () => {
+  //     promises.push(targetPage.waitForNavigation());
+  //   };
+  //   const s = await targetPage.waitForSelector('div.Y5sE8d > span > span');
+  //   await s?.click({
+  //     offset: {
+  //       x: 11.71875,
+  //       y: 5.46875,
+  //     },
+  //   });
+  //   await Promise.all(promises);
+  // }
 
-  await chrome.runtime.sendMessage({greeting: 'From the content script'});
+  await chrome.runtime.sendMessage({event: 'WAITING_FOR_USER_REVIEW'});
 };
 
 chrome.commands.onCommand.addListener(command => {
