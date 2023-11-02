@@ -86,7 +86,7 @@ const run = async (tabId: number) => {
     const s = await targetPage.waitForSelector(
       'div.o3Dpx > div:nth-of-type(2) input'
     );
-    s?.type('Walkaroo');
+    await s?.type('Walkaroo');
   }
   {
     const targetPage = page;
@@ -105,14 +105,14 @@ const run = async (tabId: number) => {
     const s = await targetPage.waitForSelector(
       'div.o3Dpx > div:nth-of-type(3) div.PfQ8Lb > div > div:nth-of-type(1) input'
     );
-    s?.type('01');
+    await s?.type('01');
   }
   {
     const targetPage = page;
     const s = await targetPage.waitForSelector(
       'div.o3Dpx > div:nth-of-type(3) div.PfQ8Lb > div > div:nth-of-type(3) input'
     );
-    s?.click({
+    await s?.click({
       offset: {
         x: 4.666656494140625,
         y: 17.46875,
@@ -124,7 +124,7 @@ const run = async (tabId: number) => {
     const s = await targetPage.waitForSelector(
       'div.o3Dpx > div:nth-of-type(3) div.PfQ8Lb > div > div:nth-of-type(3) input'
     );
-    s?.type('00');
+    await s?.type('00');
   }
   {
     const targetPage = page;
@@ -197,20 +197,84 @@ const run = async (tabId: number) => {
     if (element) {
       await element.click({
         offset: {
-          x: 117.66665649414062,
-          y: 13.46875,
+          x: 12.666664123535156,
+          y: 10.135414123535156,
         },
       });
     }
   }
   {
     const targetPage = page;
-    const selector = 'div:nth-of-type(5) input';
-    const element = await targetPage.waitForSelector(selector);
-    if (element) {
-      await element.type('2023-10-28');
-    }
+    await targetPage.keyboard.down('1');
   }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.up('1');
+  }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.down('0');
+  }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.up('0');
+  }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.down('3');
+  }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.up('3');
+  }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.down('0');
+  }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.up('0');
+  }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.down('2');
+  }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.up('2');
+  }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.down('0');
+  }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.up('0');
+  }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.down('2');
+  }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.up('2');
+  }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.down('3');
+  }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.up('3');
+  }
+  // {
+  //   const targetPage = page;
+  //   const selector = 'div:nth-of-type(5) input';
+  //   const element = await targetPage.waitForSelector(selector);
+  //   if (element) {
+  //     await element.type('2023-10-28');
+  //   }
+  // }
   {
     const targetPage = page;
     const selector = 'div:nth-of-type(6) textarea';
@@ -292,7 +356,7 @@ const run = async (tabId: number) => {
   }
   {
     const targetPage = page;
-    const selector = 'div.KKjvXb > span';
+    const selector = 'div.KKjvXb';
     const element = await targetPage.waitForSelector(selector);
     if (element) {
       await element.click({
@@ -304,18 +368,45 @@ const run = async (tabId: number) => {
     }
   }
   {
-    const targetPage = page;
-    const selector = 'div.OA0qNb > div.KKjvXb > span';
-    const element = await targetPage.waitForSelector(selector);
-    if (element) {
-      await element.click({
-        offset: {
-          x: 74,
-          y: 11.166664123535156,
-        },
-      });
-    }
+    await page.waitForTimeout(1000);
   }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.down('ArrowDown');
+  }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.up('ArrowDown');
+  }
+  // {
+  //   const targetPage = page;
+  //   await targetPage.keyboard.down('1');
+  // }
+  // {
+  //   const targetPage = page;
+  //   await targetPage.keyboard.up('1');
+  // }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.down('Enter');
+  }
+  {
+    const targetPage = page;
+    await targetPage.keyboard.up('Enter');
+  }
+  // {
+  //   const targetPage = page;
+  //   const selector = 'div.OA0qNb > div.KKjvXb > span';
+  //   const element = await targetPage.waitForSelector(selector);
+  //   if (element) {
+  //     await element.click({
+  //       offset: {
+  //         x: 74,
+  //         y: 11.166664123535156,
+  //       },
+  //     });
+  //   }
+  // }
   {
     const targetPage = page;
     const selector = 'div:nth-of-type(4) input';
@@ -375,6 +466,10 @@ const run = async (tabId: number) => {
   // }
 
   await chrome.runtime.sendMessage({event: 'WAITING_FOR_USER_REVIEW'});
+
+  const queryOptions = {active: true, lastFocusedWindow: true};
+  const [tab] = await chrome.tabs.query(queryOptions);
+  await chrome.debugger.detach({tabId: tab.id!});
 };
 
 chrome.commands.onCommand.addListener(command => {

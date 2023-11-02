@@ -1,4 +1,4 @@
-chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener(async (msg, sender, sendResponse) => {
   console.log({msg});
   const element = document.querySelector('body > div');
   console.log(msg);
@@ -6,7 +6,10 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     if (msg.event === 'WAITING_FOR_USER_REVIEW') {
       element.innerHTML = 'Waiting for user review...';
     } else {
-      element.innerHTML = 'Listed Created Successfully';
+      const queryOptions = {active: true, lastFocusedWindow: true};
+      const [tab] = await chrome.tabs.query(queryOptions);
+      element.innerHTML = 'Listing Created Successfully';
+      await chrome.debugger.detach({tabId: tab.id!});
     }
   }
 });
